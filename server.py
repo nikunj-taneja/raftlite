@@ -9,7 +9,12 @@ class State(Enum):
 
 
 class Server:
-    def __init__(self):
+    def __init__(self, id: int, host: str, port: int):
+        # server id, host and port
+        self.id: int = id
+        self.host: str = host
+        self.port: int = port
+
         # persistent state on all servers
         self.state: State = State.FOLLOWER
         self.current_term: int = 0
@@ -21,8 +26,8 @@ class Server:
         self.last_applied: int = 0
 
         # volatile state on leaders
-        self.next_index: List[int] = []
-        self.match_index: List[int] = []
+        self.next_index: Optional[List[int]] = None
+        self.match_index: Optional[List[int]] = None
 
     """
     Leader function to send AppendEntries RPC
@@ -66,3 +71,8 @@ class Server:
     def reply_to_request_vote(self, msg: RequestVoteMessage) -> RequestVoteResponse:
         pass
     
+    """
+    Main function to run the server
+    """
+    def run(self):
+        pass
