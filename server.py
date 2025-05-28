@@ -74,3 +74,9 @@ class Server:
     """
     def run(self):
         pass
+
+    """
+    Stops the server, can be used for simulating failure
+    """
+    def stop(self):
+        pass

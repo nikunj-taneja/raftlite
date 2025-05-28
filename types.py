@@ -13,7 +13,7 @@ class ServerState(Enum):
     LEADER: int = 3
 
 
-class LogEntry():
+class LogEntry:
     def __init__(self, term: int, command: str):
         self.term: int = term
         self.command: str = command
