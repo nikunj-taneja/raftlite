@@ -1,10 +1,3 @@
-from abc import ABC, abstractmethod
-
-class StateMachine(ABC):
-    @abstractmethod
-    def apply(self, command: str):
-        pass
-
 class Counter(StateMachine):
     def __init__(self):
         self.value: int = 0

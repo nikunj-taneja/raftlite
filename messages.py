@@ -1,11 +1,6 @@
 import json
 from typing import List
 
-class LogEntry():
-    def __init__(self, term: int, command: str):
-        self.term: int = term
-        self.command: str = command
-
 class AppendEntriesMessage():
     def __init__(self, term: int, leader_id: int, prev_log_index: int, prev_log_term: int, entries: List[LogEntry], leader_commit: int):
         self.term = term

@@ -1,22 +1,20 @@
-from enum import Enum
 from typing import List, Optional
-from messages import LogEntry, AppendEntriesMessage, AppendEntriesResponse, RequestVoteMessage, RequestVoteResponse
-
-class State(Enum):
-    FOLLOWER = 1
-    CANDIDATE = 2
-    LEADER = 3
+from messages import AppendEntriesMessage, AppendEntriesResponse, RequestVoteMessage, RequestVoteResponse
+from types import StateMachine, LogEntry, ServerState
 
 
 class Server:
-    def __init__(self, id: int, host: str, port: int):
+    def __init__(self, id: int, host: str, port: int, state_machine: StateMachine):
         # server id, host and port
         self.id: int = id
         self.host: str = host
         self.port: int = port
 
+        # state machine
+        self.state_machine: StateMachine = state_machine
+
         # persistent state on all servers
-        self.state: State = State.FOLLOWER
+        self.state: ServerState = ServerState.FOLLOWER
         self.current_term: int = 0
         self.voted_for: Optional[int] = None
         self.log: List[LogEntry] = []
