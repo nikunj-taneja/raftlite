@@ -10,11 +10,12 @@ The table below will serve as a log and help me track my progress.
 | Date | Highlight | Notes |
 | --- | --- | --- |
 | 2025-05-27 | Setup the repo, start understanding Raft | This seems daunting and exciting at the same time |
-| 2025-05-28 |  |  |
+| 2025-05-28 | Skimmed through the paper | Think I now have a basic understanding of the Raft algorithm |
+| 2025-05-29 |  |  |
 
 
 ## TODO
-- [ ] Watch Raft lecture
+- [x] Watch Raft lecture
 - [ ] Read Raft paper
 - [ ] Think about how to implement the RPCs in the simplest manner possible
 - [ ] Implement the basic logic of a Raft node
